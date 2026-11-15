@@ -60,6 +60,7 @@ footer{text-align:center;color:#9ba5b6;padding:55px 10px 35px;font-size:13px}
 <div class="panel"><div id="historyArea"></div><button class="outline" id="clearHistory">Xóa lịch sử</button></div></section></main>
 <footer>© 2026 Học Toán Cùng Em · Website học Toán và luyện thi Olympic (bản demo; lưu kết quả trên thiết bị)</footer>
 </div>
+<script src="curriculum.js"></script>
 <script>
 'use strict';
 const exams=[['TIMO','📘','#e8f1ff'],['HKIMO','🌏','#eaf8f1'],['BEBRAS','🧩','#fff1e7'],['ASMO','🏆','#fff7db'],['IKLC','🦘','#fff0ee'],['IKMC','🧮','#edf2ff'],['Violympic','🥇','#fff5de'],['VioEdu','🌱','#e9f9eb'],['SEAMO','🌴','#e8f9f7'],['BBB','🌉','#f0edff'],['FMO','🎓','#fff0f6'],['SASMO','⭐','#fff5e3'],['AMO','🎯','#e9f4ff'],['Toán phổ thông','📗','#e9f7ef']];
@@ -75,7 +76,7 @@ comps('homeCompetitions',true);comps('olymCompetitions',false);
 ['grade','olymGrade'].forEach(id=>$(id).innerHTML=grades.map((g,i)=>`<option value="${i}" ${i===3?'selected':''}>${g}</option>`).join(''));
 $('homeGrades').innerHTML=grades.map((g,i)=>`<button class="grade" data-grade="${i}">${g}</button>`).join('');
 document.querySelectorAll('[data-grade]').forEach(b=>b.onclick=()=>{$('grade').value=b.dataset.grade;tab('practice')});
-function question(grade,topic){const max=grade===0?10:grade<=2?30:grade<=4?100:grade<=6?200:500;
+function gradeQuestion(grade,topic,mode==='exam'){const max=grade===0?10:grade<=2?30:grade<=4?100:grade<=6?200:500;
 let kind=topic==='mix'?['add','multiply','logic'][rand(0,2)]:topic;if(grade===0&&kind==='multiply')kind='add';
 let a=rand(1,max),b=rand(1,max),prompt,correct;
 if(kind==='add'){if(Math.random()<.45){if(a<b)[a,b]=[b,a];prompt=`${a} − ${b} = ?`;correct=a-b}else{prompt=`${a} + ${b} = ?`;correct=a+b}}
