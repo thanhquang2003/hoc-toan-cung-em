@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Học Toán Cùng Em - Luyện toán mầm non đến lớp 9 và thi thử Olympic">
+<title>Học Toán Cùng Em | Luyện Toán Olympic</title>
+<style>
+:root{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:#25344f;background:#f8fbff}
+*{box-sizing:border-box}body{margin:0}button,select{font:inherit}button{cursor:pointer}
+button:focus-visible,select:focus-visible{outline:3px solid #a7c4ff;outline-offset:3px}
+.wrap{max-width:1190px;margin:auto;padding:0 26px}.top{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:850;font-size:23px;color:#21334d;text-decoration:none;letter-spacing:-.8px}
+.brand em{font-style:normal;color:#4384e9}.logo{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:#e8f1ff;color:#4686e9;font-size:28px}
+nav{display:flex;gap:7px;flex-wrap:wrap}nav button{border:0;background:transparent;border-radius:12px;padding:11px 16px;color:#65738c;font-weight:650}
+nav button.selected,nav button:hover{background:#e8f1ff;color:#3979d9}.screen{display:none}.screen.active{display:block}
+.intro{position:relative;overflow:hidden;text-align:center;border-radius:30px;padding:69px 18px 66px;background:linear-gradient(125deg,#e8f4ff,#f1f4ff 55%,#fff1f5);border:1px solid #e7edf9}
+.eyebrow{font-size:12px;font-weight:850;letter-spacing:1.4px;color:#5389dc}
+.intro h1{font-size:clamp(35px,5.4vw,64px);letter-spacing:-2px;margin:15px 0 13px;color:#263652}.intro h1 span{color:#4284ed}
+.intro p{font-size:17px;line-height:1.8;color:#63718c;margin:0}.intro-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+.cta,.outline{border:0;border-radius:13px;padding:15px 23px;font-weight:750}
+.cta{color:white;background:#4485ed;box-shadow:0 8px 20px #4384ed30}.cta:hover{background:#286cdb}
+.outline{background:#fff;color:#3977d4;border:1px solid #dce9ff}.outline:hover{background:#f2f7ff}
+.section-title{text-align:center;margin:57px 0 26px}.section-title h2{font-size:30px;letter-spacing:-.8px;margin:10px 0}.section-title p{color:#7a879d;margin:0}
+.competition-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.comp{display:flex;align-items:center;text-align:left;gap:14px;background:white;border:1px solid #e9eef7;border-radius:18px;padding:20px 15px;box-shadow:0 5px 16px #263d6408;transition:transform .2s,border-color .2s}
+.comp:hover,.comp.chosen{transform:translateY(-3px);border-color:#82b2ff;box-shadow:0 8px 22px #3b83ed1c}
+.emoji{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:26px;flex-shrink:0;background:var(--shade)}
+.comp b{display:block;font-size:17px;color:#293752}.comp small{display:block;font-size:11px;color:#8a96aa;margin-top:4px}
+.grades{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.grade{background:#fff;border:1px solid #e7eef9;border-radius:14px;padding:17px 8px;color:#3974d3;font-weight:750}.grade:hover{background:#eaf3ff}
+.panel{background:#fff;border:1px solid #e7edf7;border-radius:20px;padding:26px;margin:22px 0;box-shadow:0 6px 20px #293d6009}
+.fields{display:flex;gap:15px;flex-wrap:wrap;margin-bottom:22px}.fields label{flex:1;min-width:150px;color:#58677f;font-weight:650;font-size:14px}
+.fields select{display:block;width:100%;padding:12px;margin-top:9px;border:1px solid #dce5f3;border-radius:10px;background:white;color:#263652}
+.note{color:#7d8ba0;font-size:13px}.question{background:#fff;border:1px solid #e7edf7;border-radius:17px;padding:22px;margin:13px 0}
+.question h3{margin:0 0 15px;font-size:18px}.answers{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.answer{border:1px solid #dfe8f5;border-radius:11px;background:#fbfdff;text-align:left;padding:13px;color:#354460}.answer:hover{background:#edf5ff}.answer.picked{border-color:#4c8ce9;background:#e9f3ff}
+.result{font-size:21px;font-weight:800;color:#347bdc}.history-item{padding:14px 0;border-bottom:1px solid #edf1f8}.history-item small{color:#8590a5}.empty{color:#8490a2}
+footer{text-align:center;color:#9ba5b6;padding:55px 10px 35px;font-size:13px}
+@media(max-width:850px){.competition-grid{grid-template-columns:repeat(3,1fr)}.grades{grid-template-columns:repeat(4,1fr)}.top{padding:20px 0;flex-direction:column}.intro{padding:55px 15px}}
+@media(max-width:560px){.wrap{padding:0 13px}nav{justify-content:center}nav button{padding:9px}.intro h1{letter-spacing:-1px}.intro p{font-size:14px}.competition-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.comp{padding:13px 9px;gap:8px}.emoji{width:37px;height:39px;font-size:22px}.comp b{font-size:14px}.comp small{font-size:10px}.grades{grid-template-columns:repeat(3,1fr)}.answers{grid-template-columns:1fr}.section-title h2{font-size:24px}}
+</style></head><body><div class="wrap">
+<header class="top"><a class="brand" href="#home" data-tab="home"><span class="logo">✦</span><span>Học Toán <em>Cùng Em</em></span></a><nav>
+<button data-tab="home" class="selected">Trang chủ</button><button data-tab="practice">Luyện tập</button><button data-tab="olympic">Olympic</button><button data-tab="history">Thành tích</button></nav></header>
+<main><section id="home" class="screen active">
+<div class="intro"><span class="eyebrow">✦ HỌC TOÁN THÔNG MINH MỖI NGÀY</span><h1>Học Toán <span>Cùng Em</span> ✦</h1>
+<p>Khám phá Toán học từ mầm non đến lớp 9.<br>Học vui mỗi ngày, tự tin chinh phục các kỳ thi Olympic!</p>
+<div class="intro-actions"><button class="cta" data-tab="practice">📚 Bắt đầu luyện tập →</button><button class="outline" data-tab="olympic">🏆 Khám phá Olympic</button></div></div>
+<div class="section-title"><span class="eyebrow">CHỌN KỲ THI YÊU THÍCH</span><h2>Chinh phục các kỳ thi Toán 🏆</h2><p>Chọn một kỳ thi để luyện đề mô phỏng</p></div>
+<div id="homeCompetitions" class="competition-grid"></div>
+<div class="section-title"><span class="eyebrow">HỌC THEO TRÌNH ĐỘ</span><h2>Luyện Toán theo cấp lớp 📖</h2></div><div class="grades" id="homeGrades"></div>
+</section>
+<section id="practice" class="screen"><div class="section-title"><span class="eyebrow">LUYỆN TẬP MỖI NGÀY</span><h2>Chọn bài luyện tập 📚</h2><p>Câu hỏi được tạo tự động và chấm điểm ngay</p></div>
+<div class="panel"><div class="fields"><label>Lớp học<select id="grade"></select></label>
+<label>Chủ đề<select id="topic"><option value="mix">Tổng hợp</option><option value="add">Cộng, trừ</option><option value="multiply">Nhân, chia</option><option value="logic">Tư duy logic</option></select></label>
+<label>Số câu<select id="count"><option>5</option><option selected>10</option><option>15</option></select></label></div>
+<button class="cta" id="generate">✨ Tạo bài luyện tập</button></div><div id="practiceArea"></div></section>
+<section id="olympic" class="screen"><div class="section-title"><span class="eyebrow">ĐẤU TRƯỜNG TOÁN HỌC</span><h2>Luyện thi Olympic 🏆</h2><p>Chọn kỳ thi và lớp học để bắt đầu</p></div>
+<div id="olymCompetitions" class="competition-grid"></div><div class="panel"><div class="fields">
+<label>Khối lớp<select id="olymGrade"></select></label><label>Số câu<select id="olymCount"><option>5</option><option selected>10</option><option>15</option></select></label></div>
+<button class="cta" id="startExam">🚀 Bắt đầu thi thử</button><p class="note">Đề mô phỏng sinh tự động; không phải đề thi chính thức hoặc cấu trúc chuẩn của từng cuộc thi.</p></div><div id="examArea"></div></section>
+<section id="history" class="screen"><div class="section-title"><span class="eyebrow">HÀNH TRÌNH HỌC TẬP</span><h2>Thành tích của em 🌟</h2></div>
+<div class="panel"><div id="historyArea"></div><button class="outline" id="clearHistory">Xóa lịch sử</button></div></section></main>
+<footer>© 2026 Học Toán Cùng Em · Website học Toán và luyện thi Olympic (bản demo; lưu kết quả trên thiết bị)</footer>
+</div>
+<script>
+'use strict';
+const exams=[['TIMO','📘','#e8f1ff'],['HKIMO','🌏','#eaf8f1'],['BEBRAS','🧩','#fff1e7'],['ASMO','🏆','#fff7db'],['IKLC','🦘','#fff0ee'],['IKMC','🧮','#edf2ff'],['Violympic','🥇','#fff5de'],['VioEdu','🌱','#e9f9eb'],['SEAMO','🌴','#e8f9f7'],['BBB','🌉','#f0edff'],['FMO','🎓','#fff0f6'],['SASMO','⭐','#fff5e3'],['AMO','🎯','#e9f4ff'],['Toán phổ thông','📗','#e9f7ef']];
+const grades=['Mầm non',...Array.from({length:9},(_,i)=>'Lớp '+(i+1))];
+const $=id=>document.getElementById(id);
+let selected='TIMO',session=null;
+const rand=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+function tab(name){document.querySelectorAll('.screen').forEach(x=>x.classList.toggle('active',x.id===name));document.querySelectorAll('nav [data-tab]').forEach(x=>x.classList.toggle('selected',x.dataset.tab===name));window.scrollTo(0,0);if(name==='history')renderHistory()}
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();tab(b.dataset.tab)}));
+function comps(id,home){$(id).innerHTML=exams.map(([name,emoji,shade])=>`<button class="comp ${!home&&name===selected?'chosen':''}" data-exam="${name}" style="--shade:${shade}"><span class="emoji">${emoji}</span><span><b>${name}</b><small>${name==='Toán phổ thông'?'Học theo chương trình':'Luyện đề mô phỏng'}</small></span></button>`).join('');
+$(id).querySelectorAll('[data-exam]').forEach(b=>b.onclick=()=>{selected=b.dataset.exam;comps('olymCompetitions',false);tab('olympic')})}
+comps('homeCompetitions',true);comps('olymCompetitions',false);
+['grade','olymGrade'].forEach(id=>$(id).innerHTML=grades.map((g,i)=>`<option value="${i}" ${i===3?'selected':''}>${g}</option>`).join(''));
+$('homeGrades').innerHTML=grades.map((g,i)=>`<button class="grade" data-grade="${i}">${g}</button>`).join('');
+document.querySelectorAll('[data-grade]').forEach(b=>b.onclick=()=>{$('grade').value=b.dataset.grade;tab('practice')});
+function question(grade,topic){const max=grade===0?10:grade<=2?30:grade<=4?100:grade<=6?200:500;
+let kind=topic==='mix'?['add','multiply','logic'][rand(0,2)]:topic;if(grade===0&&kind==='multiply')kind='add';
+let a=rand(1,max),b=rand(1,max),prompt,correct;
+if(kind==='add'){if(Math.random()<.45){if(a<b)[a,b]=[b,a];prompt=`${a} − ${b} = ?`;correct=a-b}else{prompt=`${a} + ${b} = ?`;correct=a+b}}
+else if(kind==='multiply'){a=rand(2,grade<=3?9:15);b=rand(2,grade<=3?9:15);if(Math.random()<.5){prompt=`${a} × ${b} = ?`;correct=a*b}else{prompt=`${a*b} ÷ ${a} = ?`;correct=b}}
+else{a=rand(1,Math.max(5,Math.floor(max/3)));b=rand(2,12);prompt=`Dãy số: ${a}, ${a+b}, ${a+2*b}, ... Số tiếp theo là?`;correct=a+3*b}
+const options=new Set([correct]);let tries=0;while(options.size<4&&tries++<100){const d=Math.max(5,Math.ceil(Math.abs(correct)*.3));const n=correct+rand(-d,d);if(n>=0)options.add(n)}
+for(let n=0;options.size<4;n++)options.add(correct+n+1);
+return{prompt,correct,options:[...options].sort(()=>Math.random()-.5)}}
+function start(mode){const grade=Number($(mode==='exam'?'olymGrade':'grade').value),count=Number($(mode==='exam'?'olymCount':'count').value),topic=mode==='exam'?'mix':$('topic').value;
+session={mode,grade,exam:selected,questions:Array.from({length:count},()=>question(grade,topic)),answers:{}};renderQuestions()}
+function renderQuestions(){const area=$(session.mode==='exam'?'examArea':'practiceArea');
+area.innerHTML=`<div class="panel"><h2>${session.mode==='exam'?'🏆 '+session.exam:'📚 Bài luyện tập'} · ${grades[session.grade]}</h2><p class="note">${session.questions.length} câu hỏi · Chọn một đáp án cho mỗi câu</p></div>`+
+session.questions.map((q,i)=>`<div class="question"><h3>Câu ${i+1}. ${q.prompt}</h3><div class="answers">${q.options.map(n=>`<button class="answer" data-i="${i}" data-n="${n}">${n}</button>`).join('')}</div></div>`).join('')+
+'<button class="cta" id="submitAnswers">Nộp bài & xem kết quả →</button>';
+area.querySelectorAll('.answer').forEach(b=>b.onclick=()=>{session.answers[b.dataset.i]=Number(b.dataset.n);area.querySelectorAll(`.answer[data-i="${b.dataset.i}"]`).forEach(x=>x.classList.toggle('picked',x===b))});
+$('submitAnswers').onclick=submit;area.scrollIntoView({behavior:'smooth',block:'start'})}
+function historyRead(){try{const h=JSON.parse(localStorage.getItem('hocToanHistory')||'[]');return Array.isArray(h)?h:[]}catch(e){return []}}
+function submit(){const right=session.questions.filter((q,i)=>session.answers[i]===q.correct).length,total=session.questions.length;
+const entry={date:new Date().toLocaleString('vi-VN'),name:session.mode==='exam'?session.exam:'Luyện tập',grade:grades[session.grade],right,total};
+try{localStorage.setItem('hocToanHistory',JSON.stringify([entry,...historyRead()].slice(0,100)))}catch(e){}
+const area=$(session.mode==='exam'?'examArea':'practiceArea');
+area.innerHTML=`<div class="panel"><h2>🎉 Hoàn thành!</h2><p class="result">${right}/${total} câu đúng · ${Math.round(right/total*100)}%</p>`+
+session.questions.map((q,i)=>`<p><b>Câu ${i+1}:</b> ${q.prompt} — Đáp án đúng: <b>${q.correct}</b> ${session.answers[i]===q.correct?'✅':'❌'}</p>`).join('')+
+'<button class="cta" id="retry">Làm bài mới →</button></div>';$('retry').onclick=()=>start(session.mode)}
+function renderHistory(){const data=historyRead();$('historyArea').innerHTML=data.length?data.map(x=>`<div class="history-item"><b>${x.name} · ${x.grade}</b><p>${x.right}/${x.total} câu đúng (${Math.round(x.right/x.total*100)}%)</p><small>${x.date}</small></div>`).join(''):'<p class="empty">Chưa có bài thi nào. Hãy bắt đầu luyện tập nhé!</p>'}
+$('generate').onclick=()=>start('practice');$('startExam').onclick=()=>start('exam');
+$('clearHistory').onclick=()=>{if(confirm('Xóa toàn bộ lịch sử trên trình duyệt này?')){localStorage.removeItem('hocToanHistory');renderHistory()}};
+</script></body></html>
